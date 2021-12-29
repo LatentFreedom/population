@@ -3,6 +3,7 @@ import time
 # Installed
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
 # Local
 import app, Excel, Error, Log, Location
 
@@ -20,7 +21,7 @@ def putAddress(driver,address):
 	driver.execute_script(address_input)
 
 	try:
-		ele = driver.find_element_by_id("tb_searchlocation")
+		ele = driver.find_element(By.ID, "tb_searchlocation")
 		ele.send_keys(address)
 		time.sleep(2)
 		ele.send_keys(Keys.DOWN)
@@ -31,10 +32,10 @@ def putAddress(driver,address):
 
 def getPopulation(driver):
 	driver.execute_script("ftn_findPopulation();")
-	output = driver.find_element_by_id("div_output")
+	output = driver.find_element(By.ID, "div_output")
 	text = output.text
 	while text == "Please Wait...":
-		output = driver.find_element_by_id("div_output")
+		output = driver.find_element(By.ID, "div_output")
 		text = output.text
 	population = text.split()[8]
 	population = population.split(',')

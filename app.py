@@ -43,7 +43,7 @@ def main():
 		locations = Excel.makeLocationArray()
 		radius_array = ['1','2']
 		# radius_array = Helpers.getRadiusArray()
-		driver = startDriver()
+		driver = startDriver(True)
 		driver.get(url)
 		getAddressPopulations(driver,locations,radius_array,url)
 		driver.quit()
