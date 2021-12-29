@@ -1,10 +1,7 @@
-# pError.py : Nick Palumbo
-
 errorAddress = "" # address that caused error
 errorRadius = "" # radius that caused error
 errorX = "" # cell X to start on
 errorY = "" # cell Y to start on
-
 
 def setError(address,radius,x,y):
 	global errorAddress
@@ -30,7 +27,7 @@ def printError(given_error):
 	print("----------------------------------------------")
 
 def saveError():
-	log = open('../logs/errors.log','w')
+	log = open('./logs/errors.log','w')
 	log.write("[errorAddress,errorRadius,errorX,errorY]")
 	log.write(errorAddress + "\n")
 	log.write(errorRadius + "\n")

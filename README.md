@@ -1,19 +1,25 @@
-Scrape population information from freemaptools.
-* Given a radius and address, the site will return the given population.
-* This script allows an excel sheet to be used to import information.
-* Imort addresses and given radius.
-* Wrtie to the excel sheet the given population gien inputs.
+# Population Scraping
+Scrape population information from **[https://www.freemaptools.com/find-population.htm](https://www.freemaptools.com/find-population.htm)**.
+* Import location information and radius from excel worksheet.
+* Save population information to excel worksheet from site data.
 
-Website: https://www.freemaptools.com/find-population.htm
+## Firefox
+`geckodriver` required in path before running. You can find geckodriver at **[https://github.com/mozilla/geckodriver/releases](https://github.com/mozilla/geckodriver/releases)**
 
-EXCEL WORKBOOK NAMING:
-- Workbook Name: population.xls
-- Tab Name: Addresses
+## EXCEL Workbook Naming:
+- **Workbook Name**: population.xls
+- **Tab Name**: Addresses
 
-EXCEL WORKBOOK FORMAT:
+## EXCEL Workbook Format
+```
      A          B        C          D
 -----------------------------------------
 | address | pop@r=1 | pop@r=3 | pop@r=5 |
 -----------------------------------------
+```
 
-( Make sure excel sheet is in the same directory before running.)
+## Run program
+1. Make sure excel workbook `population.xls` has been made.
+2. Add `geckdriver` to `PATH`
+3. Install needed libraries with `pip install -r requirements.txt`
+3. run with `python app.py`

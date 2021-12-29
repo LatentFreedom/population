@@ -1,12 +1,10 @@
-# pHelpers.py : Nick Palumbo
-
-import sys
+# System
 import time
+# Installed
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import pRun,  pExcel, pError, pLog
-sys.path.insert(0,'../class')
-import classLocation
+# Local
+import app, Excel, Error, Log, Location
 
 
 # put the given radius in the input box
@@ -84,7 +82,7 @@ def continueGetAddressPopulations(driver,address_array,radius_array,url,lastX,la
 			putRadius(driver,radius_array[x])
 			success = putAddress(driver,address)
 			if success:
-				population = pRun(driver)
+				population = app(driver)
 				message = "Address: {0:38} | radius: {1:4} | population: {2:10}".format(address,radius_array[x],population)
 				print(message)
 				populationLog.writeToLog(message)
